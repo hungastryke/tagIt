@@ -117,11 +117,12 @@
 				var credentials;
 				var form = $(this).closest('div');
 				var login = $('.authBox');
+				var registration = $('.regBox');
 				var eValidator = "<span class='validate-error email'>(Please enter a valid email address)</span>";
 				var mValidator = "<span class='validate-error password'>(Passwords must match)</span>";
 				var pValidator = "<span class='validate-error password'>(Must be 8 characters: 1 lower, 1 uppercase letter & 1 number)</span>";
 				var submit = $('input[type=button]');
-				var txt = $('input[type=text');
+				var txt = $('input[type=text]');
 				// validate login and registration
 				var error_handling = function(element, label, type, message){
 					credentials = ( element.is(txt) ? eregex.test(element.val()) : pregex.test(element.val()) );
@@ -148,8 +149,13 @@
 				l.blur(function(){
 					h.val() !== l.val() ? unmatched() : error_handling(l,m,'confirmPassword', pValidator);
 				});	
-				submit.click(function(event){
-					form.is(login) ? n.trigger('blur') : o.trigger('blur');
+				login.on('click', submit, function(event){
+					n.trigger('blur');
+					var error = $('.validate-error').is(':visible');
+					error ? event.preventDefault() : "";
+				});	
+				registration.on('click', submit, function(event){
+					o.trigger('blur');
 					var error = $('.validate-error').is(':visible');
 					error ? event.preventDefault() : "";
 				});
