@@ -1,0 +1,77 @@
+/* General layout styles */
+
+
+
+/* Full width
+----------------------------------------------------------------------------------------*/
+@media all and (min-width: 60em) {	
+}
+
+
+@media all and (max-width: 60em) {
+}
+
+
+
+/* Large format
+----------------------------------------------------------------------------------------*/
+@media screen and (min-width: 48em) and (max-width: 60em) {
+}
+
+
+
+/* Medium format (iPad portrait)
+----------------------------------------------------------------------------------------*/
+@media screen and (min-width: 30em) and (max-width: 48em) {
+	.authentication input[type="text"],
+	.authentication input[type="password"],
+	.authentication input[type="button"],
+	.authentication input[type="submit"],
+	.authentication input[type="reset"] { width: 100%; }
+}
+
+
+
+@media screen and (max-width: 48em) {
+	.authentication input[type="text"],
+	.authentication input[type="password"],
+	.authentication input[type="button"],
+	.authentication input[type="submit"],
+	.authentication input[type="reset"] { width: 100%; }
+}
+
+
+
+/* Medium and small formats (Android landscape)
+----------------------------------------------------------------------------------------*/
+@media screen and (max-width: 40em) {
+	.authentication form { width: 60%; }
+	.authentication input[type="text"],
+	.authentication input[type="password"],
+	.authentication input[type="button"],
+	.authentication input[type="submit"],
+	.authentication input[type="reset"] { width: 100%; }
+	.authentication .authBox { 
+		width: 80%; 
+		min-width: 80%; 
+	}
+	
+}
+	
+	
+	
+/* Small format (iPhone/Android)
+----------------------------------------------------------------------------------------*/
+@media only screen and (max-width: 30em) {
+	.authentication form { 
+		width: 80%; 
+		margin: 0px 10%;
+	}
+	.authentication input[type="text"],
+	.authentication input[type="password"],
+	.authentication input[type="button"],
+	.authentication input[type="submit"],
+	.authentication input[type="reset"] { width: 100%; }
+	.authentication .authBox { width: 98%; }
+	
+}

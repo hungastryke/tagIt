@@ -1,0 +1,10 @@
+[ 
+	{ "project":"Responsive Design", "image":"/img/1.png", "tags":["gowallet | blackhawk networks | safeway"], "portfolio": ["GoWallet.com"], "url": ["http://www.gowallet.com"] }, 
+	{ "project":"Redesign", "image":"/img/2.png", "tags":["mtv | nickmom"], "portfolio": ["MTV/NickMom Website", "Shockwave Games", "NickMom Mobile Wireframe [Best viewed on iphone]"], "url": ["http://nickmom.com", "http://shockwave.com", "http://hungastryke.com/samples/mtvnFX/"] }, 
+	{ "project":"Software Engineering", "image":"/img/3.png", "tags":["keas"], "portfolio": ["Wireframe", "Notification Reminders Treatment", "Bonus point slot treatment", "Keas Corporate treatment"], "url": ["http://hungastryke.com/samples/keasFX/", "http://hungastryke.com/samples/alertFX/", "http://hungastryke.com/samples/bonusFX/", "http://hungastryke.com/samples/corporateFX/"] }, 
+	{ "project":"Online Game", "image":"/img/5.png", "tags":["mini quiz"], "portfolio": ["Quiz Treatment"], "url": ["http://hungastryke.com/samples/quizFX/"] }, 
+	{ "project":"Online Game Shop", "image":"/img/4.png", "tags":["Inhale Digital"], "portfolio": ["Compatibility Profile treatment", "inhaleDigital - Crunchbase Profile"], "url": ["http://hungastryke.com/samples/profileFX/", "http://www.crunchbase.com/company/inhale-digital"] }, 
+	{ "project":"Health Services", "image":"/img/7.png", "tags":["dr. jennifer gallagher"], "portfolio": ["Dr. Gallagher's Website"], "url": ["http://jennifermadani.com/"] }, 
+	{ "project":"Interactive Web App", "image":"/img/6.png", "tags":["88 Keys"], "portfolio": ["Interactive Piano Keys Treatment"], "url": ["http://hungastryke.com/samples/pianoFX/"] }, 
+	{ "project":"International Relations", "image":"/img/8.png", "tags":["human liberation"], "portfolio": ["Human Liberation Website"], "url": ["http://humanliberation-meji.com"] } 
+]
