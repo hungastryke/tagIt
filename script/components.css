@@ -363,6 +363,7 @@ dl.search dd:last-child { border: none; }
 	border-left: none;
 }
 .sortable th:hover { cursor: pointer; }
+.sortable th.static:hover { cursor: default; }
 .sortable th:last-child,
 .sortable tr td:last-child { border-right: none; }
 .sortable th span { 

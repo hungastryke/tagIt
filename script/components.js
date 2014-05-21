@@ -505,6 +505,7 @@
     		// sortable table
     		if(tag.is(sortable)){
     			var a = []; // store header names
+    			var active;
     			var c = []; // store key|value attributes
     			var count; // array checker
     			var criteria;
@@ -514,8 +515,9 @@
     			var h;
     			var header = $('.sortable th');
     			var id;
-    			var table = $('.sortable');
     			var rows = $('.sortable tr');
+    			var table = $('.sortable');
+    			var type;
     			table.wrap('<div class="tablet"></div>');
     			header.each(function(item){
     				// key data that we're checking against
@@ -526,20 +528,20 @@
     				a.push(criteria);
     				// determine if we're sorting the columns
     				f = $(this).attr('data-configs').split("|");
-    				f[0] === '1' ? $(this).append('<span>&#9650;</span>') : "";
+    				f[0] === '1' ? $(this).append('<span>&#9650;</span>') : $(this).addClass('static');
     			}).on('click', function(){
     				id = $(this).prop('id');
     				g = $(this).attr('data-configs').split("|");
-    				g = g[0];
-    				h = g[1];
+    				active = g[0];
+    				type = g[1];
     				// activate if sorting is enabled
-    				if(g === '1'){
+    				if( !$(this).hasClass('static') ){
 						var ascend = function(){
 		    				// sort the table either alphabetically, numerically or chronologically
 							c.sort(function(a,b){
-								if(h === 'd'){
+								if(type === 'd'){
 									return new Date(b[id]) - new Date(a[id]);
-								} else if(h === 'n') {
+								} else if(type === 'n') {
 									return a[id]-b[id];
 								} else {
 									if(a[id] < b[id]) return -1;
@@ -554,7 +556,7 @@
 	    				// arrow behavior
 	    				if( $(this).hasClass('ascending') ){ 
 	    					$(this).removeClass('ascending').children('span').html('&#9650');
-	    					g === 'n' ? descend() : c.reverse();
+	    					type === 'n' ? descend() : c.reverse();
 						} else {
 							ascend();
 							header.not($(this)).removeClass('ascending').children('span').html('&#9650');
