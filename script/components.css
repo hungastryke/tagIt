@@ -344,3 +344,39 @@ dl.search dd.noEvent:hover {
 }
 dl.search dd:last-child { border: none; }
 .noData { font: normal .9em arial; }
+
+/* ========================
+	    SORTABLE TABLE (c) Kwansah Madani 2014
+	    ======================== */
+.sortable { 
+	width: 100%;
+	border: solid 1px #999;
+	border-collapse: collapse;
+	font: normal .9em arial, helvetica, times new roman; 
+}
+.sortable th,
+.sortable tr td { 
+	padding: 5px 0px;
+	background: #EEE;
+	border: solid 1px #999;
+	border-top: none;
+	border-left: none;
+}
+.sortable th:hover { cursor: pointer; }
+.sortable th:last-child,
+.sortable tr td:last-child { border-right: none; }
+.sortable th span { 
+	position: relative;
+	top: -2px;
+	display: inline-block;
+	margin-left: 6%;
+	padding: .2em .25em;
+	background: #E0E0E0;
+	border: solid 1px #CCC;
+	font-size: .65em;
+	color: #666; 
+}
+.sortable tr:first-child { position: relative; }
+.sortable tr td { background: #FFF; }
+.sortable tr:last-child td { border-bottom: none; }
+.tablet { height: 310px; overflow: auto; } 

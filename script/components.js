@@ -74,11 +74,12 @@
 			$("<link>").appendTo($('head')).attr({type : 'text/css', rel : 'stylesheet', href: 'script/layout.css'});
 			// global vars
 			var page = $('body');
-			var tag = $('div');
+			var tag = $('div, table');
 			var authentication = $('.authentication');
 			var currency = $('.currency');
 			var explore = $('.explore');
 			var registration = $('.registration');
+			var sortable = $('.sortable');
 			var winnow = $('.winnow');
 			var rcontrols = $('h3#register, label[for=confirmPassword], input[name=confirmPassword], input[name=register]');
 	        // timer to render drop down on keypress
@@ -501,6 +502,101 @@
     			format();
     		}
     		// end price format
+    		// sortable table
+    		if(tag.is(sortable)){
+    			var a = []; // store header names
+    			var c = []; // store key|value attributes
+    			var count; // array checker
+    			var criteria;
+    			var d;
+    			var f;
+    			var g;
+    			var h;
+    			var header = $('.sortable th');
+    			var id;
+    			var table = $('.sortable');
+    			var rows = $('.sortable tr');
+    			table.wrap('<div class="tablet"></div>');
+    			header.each(function(item){
+    				// key data that we're checking against
+    				criteria = $(this).html().toLowerCase().replace(/\s+/g, "");
+    				// assign that key to a unique id
+    				$(this).prop('id', criteria);
+    				// sort our fields
+    				a.push(criteria);
+    				// determine if we're sorting the columns
+    				f = $(this).attr('data-configs').split("|");
+    				f[0] === '1' ? $(this).append('<span>&#9650;</span>') : "";
+    			}).on('click', function(){
+    				id = $(this).prop('id');
+    				g = $(this).attr('data-configs').split("|");
+    				g = g[0];
+    				h = g[1];
+    				// activate if sorting is enabled
+    				if(g === '1'){
+						var ascend = function(){
+		    				// sort the table either alphabetically, numerically or chronologically
+							c.sort(function(a,b){
+								if(h === 'd'){
+									console.log('date');
+									return new Date(b[id]) - new Date(a[id]);
+								} else if(h === 'n') {
+									console.log('numerical');
+									return a[id]-b[id];
+								} else {
+									console.log('alphabetical');
+									if(a[id] < b[id]) return -1;
+									if(a[id] > b[id]) return 1;
+									return 0;
+								}
+							});
+						}
+						var descend = function(){
+							c.sort(function(a,b){
+								console.log('numerical');
+								return b[id]-a[id];
+							});
+						}
+	    				// arrow behavior
+	    				if( $(this).hasClass('ascending') ){ 
+	    					$(this).removeClass('ascending').children('span').html('&#9650');
+	    					g === 'n' ? descend() : c.reverse();
+						} else {
+							ascend();
+							header.not($(this)).removeClass('ascending').children('span').html('&#9650');
+	    					$(this).addClass('ascending').children('span').html('&#9660;');
+						}
+						// table manipulation begins
+						$('.sortable tr:not(:first-child)').remove();
+	    				// dynamically create new table data based on sort filter
+	    				for(j=0; j<c.length; j++){
+	    					// get key name in array
+	    					var k = Object.keys(c[0]);
+	    					// append new table rows
+	    					table.append('<tr></tr>');
+	    					// loop through each row and dynamically add relevant table data
+							for(l=0; l<k.length; l++){
+								var name = k[l];
+								$('.sortable tr:eq(' + (j+1) + ')').append('<td>' + c[j][name] + '</td>');
+							}
+	    				}
+    				}
+    			});
+    			// for each row capture the data and place in an array
+    			for(i=0; i<rows.length; i++){
+    				var b = {};
+    				rows.eq(i).children('td').each(function(item){
+    					count = rows.eq(i).children('td').length;
+    					count = count - 1;
+    					b[a[item]] = $(this).html();
+    					if(item === count){
+    						c.push(b);
+							d = JSON.stringify(c);
+						}
+					});
+    			}
+    		}
+    		// end sortable table
 		});// end main function
 	}
 })(); //calls our function immediately
