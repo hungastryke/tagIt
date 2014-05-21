@@ -538,13 +538,10 @@
 		    				// sort the table either alphabetically, numerically or chronologically
 							c.sort(function(a,b){
 								if(h === 'd'){
-									console.log('date');
 									return new Date(b[id]) - new Date(a[id]);
 								} else if(h === 'n') {
-									console.log('numerical');
 									return a[id]-b[id];
 								} else {
-									console.log('alphabetical');
 									if(a[id] < b[id]) return -1;
 									if(a[id] > b[id]) return 1;
 									return 0;
@@ -552,10 +549,7 @@
 							});
 						}
 						var descend = function(){
-							c.sort(function(a,b){
-								console.log('numerical');
-								return b[id]-a[id];
-							});
+							c.sort(function(a,b){ return b[id]-a[id]; });
 						}
 	    				// arrow behavior
 	    				if( $(this).hasClass('ascending') ){ 
