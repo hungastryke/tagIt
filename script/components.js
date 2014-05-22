@@ -508,6 +508,7 @@
     			var active;
     			var c = []; // store key|value attributes
     			var count; // array checker
+    			var container = $('.container');
     			var criteria;
     			var d;
     			var f;
@@ -515,10 +516,15 @@
     			var h;
     			var header = $('.sortable th');
     			var id;
+    			var last;
     			var rows = $('.sortable tr');
+    			var t;
     			var table = $('.sortable');
-    			var type;
     			table.wrap('<div class="tablet"></div>');
+    			var type;
+    			var u;
+    			var v;
+    			var w;
     			header.each(function(item){
     				// key data that we're checking against
     				criteria = $(this).html().toLowerCase().replace(/\s+/g, "");
@@ -591,6 +597,49 @@
 						}
 					});
     			}
+				setTimeout(function(){ 
+	    			// clone & cloak
+	    			$('body').prepend('<table class="cloak"></table>');
+	    			$('.cloak').insertBefore('.tablet').css({ 'position' : 'fixed', 'top' : $('.sortable tr:eq(0)').position().top, 'left' :  $('.sortable tr:eq(0)').position().left, 'width' : container.outerWidth() + .5 });
+	    			$('.sortable tr:eq(0)').clone().appendTo('.cloak');
+					header.each(function(item){
+						$('.cloak th:eq(' + item + ')').css({ 'width' : $('.sortable tr:eq(0) th:eq(' + item + ')').innerWidth() });
+					}).delay(2000).addClass('invisible');
+					// hack to fit fixed table
+					$('.cloak tr').append('<th></th>');
+					$('.cloak th:last-child').css({ 'width' : '1px' });
+					// take second to last fixed table header and subtract a pixel
+					w = $('.cloak th').length;
+					w = w-2;
+					last = $('.cloak th:eq(' + w + ')');
+					last.width(last.width() - 1);
+					// trigger click on cloak
+					$('.cloak th').each(function(item){
+						$(this).on('click', function(){
+		    				// arrow behavior
+		    				if( $(this).hasClass('ascending') ){ 
+		    					$(this).removeClass('ascending').children('span').html('&#9650');
+							} else {
+								header.not($(this)).removeClass('ascending').children('span').html('&#9650');
+		    					$(this).addClass('ascending').children('span').html('&#9660;');
+							}
+							$('.sortable tr:eq(0) th:eq(' + item + ')').trigger('click');
+						});
+					});
+					// drop shadow effect
+					t = $('.cloak').offset();
+					u = $('.tablet');
+					u.on('scroll', function(){
+						v = t.top-u.scrollTop();
+						v < 0 ? $('.cloak').addClass('shadow') : $('.cloak').removeClass('shadow');
+					});
+				}, 1000);
+				$(window).resize(function(){
+					header.each(function(item){
+						$('.cloak th:eq(' + item + ')').css({ 'width' : $('.sortable tr:eq(0) th:eq(' + item + ')').innerWidth() });
+					});
+					$('.cloak').css({ 'position' : 'fixed', 'top' : $('.sortable tr:eq(0)').position().top, 'left' :  $('.sortable tr:eq(0)').position().left, 'width' : container.outerWidth() + .5 });
+				});
     		}
     		// end sortable table
 		});// end main function

@@ -348,36 +348,68 @@ dl.search dd:last-child { border: none; }
 /* ========================
 	    SORTABLE TABLE (c) Kwansah Madani 2014
 	    ======================== */
-.sortable { 
+.sortable,
+.cloak { 
 	width: 100%;
-	border: solid 1px #999;
+	border: none;
 	border-collapse: collapse;
 	font: normal .9em arial, helvetica, times new roman; 
 }
+.cloak { z-index: 3; }
 .sortable th,
-.sortable tr td { 
+.sortable tr td,
+.cloak th,
+.cloak tr td{ 
 	padding: 5px 0px;
 	background: #EEE;
 	border: solid 1px #999;
 	border-top: none;
 	border-left: none;
 }
-.sortable th:hover { cursor: pointer; }
-.sortable th.static:hover { cursor: default; }
+.sortable th:hover,
+.cloak th:hover { cursor: pointer; }
+.sortable th.static:hover,
+.cloak th.static:hover { cursor: default; }
 .sortable th:last-child,
-.sortable tr td:last-child { border-right: none; }
-.sortable th span { 
+.sortable tr td:last-child,
+.cloak th:last-child,
+.cloak tr td:last-child { border-right: none; }
+.sortable th span,
+.cloak th span { 
 	position: relative;
 	top: -2px;
 	display: inline-block;
 	margin-left: 6%;
 	padding: .2em .25em;
-	background: #E0E0E0;
+	background: #FFF;
 	border: solid 1px #CCC;
 	font-size: .65em;
 	color: #666; 
 }
-.sortable tr:first-child { position: relative; }
-.sortable tr td { background: #FFF; }
-.sortable tr:last-child td { border-bottom: none; }
-.tablet { height: 310px; overflow: auto; } 
+.sortable tr:first-child,
+.cloak tr:first-child { position: relative; }
+.sortable tr td,
+.cloak tr td { background: #FFF; }
+.sortable tr:last-child td,
+.cloak tr:last-child td { border-bottom: none; }
+.cloak th { border-bottom: none; }
+.cloak tr th:first-child { padding-left: 1px; }
+.cloak tr th:last-child { border-bottom: none; }
+.tablet { 
+	height: 230px;
+	border: solid 1px #999; 
+	overflow: auto; 
+} 
+.invisible { opacity: 0; }
+.shadow th { border-bottom: solid 1px #999; }
+.shadow:after {
+  content: " ";
+  position:absolute;
+  width: 99%;
+  left: 5px;
+  right: 10;
+  bottom: 0;
+  height: 20px;
+	box-shadow: 0px 3px 6px #CCC;
+  z-index:-1;
+}
