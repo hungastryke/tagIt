@@ -412,4 +412,419 @@ dl.search dd:last-child { border: none; }
   height: 20px;
 	box-shadow: 0px 3px 6px #CCC;
   z-index:-1;
+}/************* remove ************/
+body { 
+	padding: 0;
+	margin: 0;
+	border: none;
+}
+.container {
+	max-width: 1000px;
+	margin: 10px auto 0px;
+	text-align: center;
+}
+.search_background {
+	width: 310px;
+	margin: 10px auto;
+	padding: 10px; 
+	background: #999;
+	border-radius: 4px;
+	text-align: center;
+}
+.filter { 
+	width: 290px;
+	margin: 0px auto;
+	padding: 0px; 
+}
+.filter DIV {
+	padding: 10px 0px; 
+	border-bottom: dotted 1px #999;
+	font: normal .9em arial;
+	text-align: left;
+}
+.filter DIV:last-child { border: none; }
+.filter img { 
+    width: 200px; 
+    height: 74px;
+    margin-right: 10px;
+    border: 1px solid #999;
+    vertical-align: middle;
+}
+.filter span { font: normal .9em arial; }
+
+/************* end remove ************/
+.authBox,
+.regBox { 
+	display: block;
+	width: 400px;
+	padding: 10px 0px 40px;
+	margin: 10px auto;
+	background: #E8E8E8;
+	background: -webkit-linear-gradient(top, #FFF 0%, #e8e8e8 100%);
+	background: -moz-linear-gradient(top, #FFF 0%, #e8e8e8 100%);
+	background: -ms-linear-gradient(top, #FFF 0%, #e8e8e8 100%);
+	background: -o-linear-gradient(top, #FFF 0%, #e8e8e8 100%);
+	border: solid 1px #CCC;
+	border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	-ms-border-radius: 4px;
+	-o-border-radius: 4px;
+}
+.authBox form,
+.regBox form { 
+	width: 100%;
+	margin: 0px 10px;
+	text-align: center; 
+}
+.authBox h3,
+.regBox h3 {
+	margin: 15px 0px;
+	font: normal 1em arial; 
+	text-align: left;
+	color: #666;
+}
+.authBox p,
+.regBox p {
+	margin: 0px 0px 15px;
+	text-align: left;
+	font: normal .9em arial;
+	color: #999;
+}
+.authBox label,
+.regBox label { 
+	display: block;
+	text-align: left;
+}
+.authBox label span,
+.regBox label span { 
+	margin: 0px;
+	font: normal .95em arial;
+	color: #999; 
+}
+.authBox fieldset,
+.regBox fieldset {
+	display: block;
+	margin: 0px auto; 
+	border: none;
+}
+.authBox .JSON,
+.authBox .JSON fieldset,
+.regBox .JSON,
+.regBox .JSON fieldset {
+	margin: 0px auto;
+	text-align: center;
+}
+.authBox label,
+.regBox label {
+	font: normal .9em arial;
+	color: #333;
+}
+.authBox input[type="text"],
+.authBox input[type="password"],
+.authBox input[type="button"],
+.authBox input[type="submit"],
+.authBox input[type="reset"],
+.regBox input[type="text"],
+.regBox input[type="password"],
+.regBox input[type="button"],
+.regBox input[type="submit"],
+.regBox input[type="reset"] {
+	display: block;
+	width: 380px;
+	height: 45px;
+	padding: 0;
+	margin: 5px 0px 10px;
+	border: solid 1px #CCC;
+	border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	-ms-border-radius: 4px;
+	-o-border-radius: 4px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box; 
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	font: normal .95em arial; 
+}
+.authBox input[type="text"],
+.authBox input[type="password"],
+.regBox input[type="text"],
+.regBox input[type="password"] { padding: 0px 10px; color: #999; }
+.authBox input[type="button"],
+.authBox input[type="submit"],
+.authBox input[type="reset"],
+.regBox input[type="button"],
+.regBox input[type="submit"],
+.regBox input[type="reset"] {
+	display: inline;
+	width: 180px; 
+	height: 45px;
+	margin: 10px 10px 10px 0px;
+	background: #CCC;
+	background: -webkit-linear-gradient(top, #EEE 0%, #CCC 100%);
+	background: -moz-linear-gradient(top, #EEE 0%, #CCC 100%);
+	background: -ms-linear-gradient(top, #EEE 0%, #CCC 100%);
+	background: -o-linear-gradient(top, #EEE 0%, #CCC 100%);
+	color: #666;
+}
+.authBox input[type="button"].btn.red,
+.regBox input[type="button"].btn.red { 
+	height: 45px;
+	background: #bd3b01;
+	background: -webkit-linear-gradient(top, #f66e13 0%,#bd3b01 100%);
+	background: -moz-linear-gradient(top, #f66e13 0%,#bd3b01 100%);
+	background: -ms-linear-gradient(top, #f66e13 0%,#bd3b01 100%);
+	background: -o-linear-gradient(top, #f66e13 0%,#bd3b01 100%);
+	color: #FFF; 
+}
+.authBox .validate-error,
+.regBox .validate-error {
+	display: inline-block;
+	margin: 0px 0px 0px 5px; 
+	font: normal .75em arial;
+	color: #990000;
+	text-align: left;
+}
+.authBox input[type="text"].input-error,
+.authBox input[type="password"].input-error,
+.regBox input[type="text"].input-error,
+.regBox input[type="password"].input-error {
+	background: #f2dede; 
+	border: solid 1px #990000; 
+}
+.authBox input[type="button"]#reset,
+.regBox input[type="button"]#reset { text-align: center; }
+.authBox input[type="button"]:hover,
+.authBox input[type="submit"]:hover,
+.authBox input[type="reset"]:hover,
+.regBox input[type="button"]:hover,
+.regBox input[type="submit"]:hover,
+.regBox input[type="reset"]:hover { cursor: pointer; }
+.authBox input[id="passie"],
+.ie9 .authBox input[name="password"],
+.regBox input[id="passie"],
+.ie9 .regBox input[name="password"] { display: none; }
+.ie9 .authBox input[id="passie"],
+.ie9 .authBox input[class="show"],
+.ie9 .regBox input[id="passie"],
+.ie9 .regBox input[class="show"] { display: block; }
+.ie9 .authBox input[name="password"],
+.ie9 .regBox input[name="password"] { margin: 0px; }
+
+/* ========================
+    CSS3 LOADER (c) Kwansah Madani 2013
+    ======================== */
+#modal { 
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 3;
+	background: #DDD;
+	opacity: .5; 
+}
+.miniloadContainer,
+.loadContainer {
+    padding: 20px 38px 50px 20px;
+    /*background: #F66E13;*/
+    background: #09C;
+    border-radius: 4px;
+}
+#miniloader,
+#loader {
+    border: solid 8px #FFF;
+    border-right-color: transparent;
+    border-radius: 50%;
+    box-shadow: 0 0 25px 2px #EEE;
+    animation: spin 1s linear infinite;
+    -webkit-animation: spin 1s linear infinite;
+    -moz-animation: spin 1s linear infinite;
+    -ms-animation: spin 1s linear infinite;
+    -o-animation: spin 1s linear infinite;	
+}
+.miniloadContainer { 
+	position: absolute;
+	padding: 5px 5px 10px 10px; 
+}
+.loadContainer {
+    position: fixed;
+    z-index: 3;
+    width: 30px;
+    height: 30px;
+}
+.loadContainer p {
+    margin: 10px 0px 0px -8px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font: normal .8em 'arial';
+    color: #FFF;
+}
+#loader {
+    position: relative;
+    width: 30px;
+    height: 30px;
+}
+@keyframes spin {
+    from { transform: rotate(0deg); opacity: 0.2; }
+    50% { transform: rotate(180deg); opacity: 1; }
+    to { transform: rotate(360deg); opacity: 0.2; }
+}
+@-webkit-keyframes spin {
+    from { -webkit-transform: rotate(0deg); opacity: 0.2; }
+    50% { -webkit-transform: rotate(180deg); opacity: 1; }
+    to { -webkit-transform: rotate(360deg); opacity: 0.2; }
+}
+@-moz-keyframes spin {
+    from { -moz-transform: rotate(0deg); opacity: 0.2; }
+    50% { -moz-transform: rotate(180deg); opacity: 1; }
+    to { -moz-transform: rotate(360deg); opacity: 0.2; }
+}
+@-ms-keyframes spin {
+    from { -ms-transform: rotate(0deg); opacity: 0.2; }
+    50% { -ms-transform: rotate(180deg); opacity: 1; }
+    to { -ms-transform: rotate(360deg); opacity: 0.2; }
+}
+@-o-keyframes spin {
+    from { -o-transform: rotate(0deg); opacity: 0.2; }
+    50% { -o-transform: rotate(180deg); opacity: 1; }
+    to { -o-transform: rotate(360deg); opacity: 0.2; }
+}
+
+/* ========================
+	    RETRIEVAL CSS (c) Kwansah Madani 2013
+	    ======================== */
+input[type="text"].amount {
+	text-align: right;
+}
+/* ========================
+	    RETRIEVAL CSS (c) Kwansah Madani 2013
+	    ======================== */
+input[type=text].sort { 
+	width: 290px;
+	height: 10px;
+	padding: 10px 5px;
+	margin: 10px auto;
+	border: solid 3px #999;
+	border-radius: 4px; 
+	font: normal 1em arial, helvetica, times new roman;  
+}
+.searchFilter {
+	display: block; 
+	width: 290px;  
+	margin: 0px auto;
+}
+.searchFilter input[type=text] {
+	width: 100%;
+	height: 10px;
+	padding: 10px 5px;
+	border: solid 3px #999;
+	border-radius: 4px; 
+	font: normal 1em arial, helvetica, times new roman; 
+}
+dl.search {
+    display: none;
+    position: absolute;
+    z-index: 8;
+    margin: 0px;
+    padding: 0px 6px;
+    background: #FFF;
+    border: solid 1px #999;
+    border-top: none;  
+}
+dl.search dd {
+    padding: 10px 2px 10px 10px;
+    margin: 0px 0px 0px -6px;
+    border-bottom: solid 1px #CCC;
+    font: normal 1em arial, helvetica, times new roman; 
+    text-align: left;
+}
+dl.search dd img {
+    width: 45px; 
+    height: 35px;
+    margin-right: 10px;
+    border: 1px solid #999;
+    vertical-align: middle;
+}
+dl.search dd span { float: none; }
+dl.search dd:hover,
+dl.search dd.selected {
+    cursor: pointer;
+    background: #DDD;
+}
+dl.search dd.noEvent:hover {
+    cursor: default;
+    background: #FFF;
+}
+dl.search dd:last-child { border: none; }
+.noData { font: normal .9em arial; }
+
+/* ========================
+	    SORTABLE TABLE (c) Kwansah Madani 2014
+	    ======================== */
+.sortable,
+.cloak { 
+	width: 100%;
+	border: none;
+	border-collapse: collapse;
+	font: normal .9em arial, helvetica, times new roman; 
+}
+.cloak { z-index: 3; }
+.sortable th,
+.sortable tr td,
+.cloak th,
+.cloak tr td{ 
+	padding: 5px 0px;
+	background: #EEE;
+	border: solid 1px #999;
+	border-top: none;
+	border-left: none;
+}
+.sortable th:hover,
+.cloak th:hover { cursor: pointer; }
+.sortable th.static:hover,
+.cloak th.static:hover { cursor: default; }
+.sortable th:last-child,
+.sortable tr td:last-child,
+.cloak th:last-child,
+.cloak tr td:last-child { border-right: none; }
+.sortable th span,
+.cloak th span { 
+	position: relative;
+	top: -2px;
+	display: inline-block;
+	margin-left: 6%;
+	padding: .2em .25em;
+	background: #FFF;
+	border: solid 1px #CCC;
+	font-size: .65em;
+	color: #666; 
+}
+.sortable tr:first-child,
+.cloak tr:first-child { position: relative; }
+.sortable tr td,
+.cloak tr td { background: #FFF; }
+.sortable tr:last-child td,
+.cloak tr:last-child td { border-bottom: none; }
+.cloak th { border-bottom: none; }
+.cloak tr th:first-child { padding-left: 1px; }
+.cloak tr th:last-child { border-bottom: none; }
+.cloak tr th.noBorder { border-right: none; }
+.tablet { 
+	height: 230px;
+	border: solid 1px #999; 
+	overflow: auto; 
+} 
+.invisible { opacity: 0; }
+.shadow th { border-bottom: solid 1px #999; }
+.shadow:after {
+  content: " ";
+  position:absolute;
+  width: 99%;
+  left: 5px;
+  right: 10;
+  bottom: 0;
+  height: 20px;
+	box-shadow: 0px 3px 6px #CCC;
+  z-index:-1;
 }

@@ -520,7 +520,7 @@
     			var rows = $('.sortable tr');
     			var t;
     			var table = $('.sortable');
-    			table.wrap('<div class="tablet"></div>');
+    			table.wrap('<div class="tablet" id="tablet"></div>');
     			var type;
     			var u;
     			var v;
@@ -598,9 +598,12 @@
 					});
     			}
 				setTimeout(function(){ 
+					// detect if scrollbar is present
+					var myTable = document.getElementById('tablet');
+					var scrollbarWidth = myTable.offsetWidth - myTable.clientWidth;
 	    			// clone & cloak
 	    			$('body').prepend('<table class="cloak"></table>');
-	    			$('.cloak').insertBefore('.tablet').css({ 'position' : 'fixed', 'top' : $('.sortable tr:eq(0)').position().top, 'left' :  $('.sortable tr:eq(0)').position().left, 'width' : container.outerWidth() + .5 });
+	    			$('.cloak').insertBefore('.tablet').css({ 'position' : 'fixed', 'top' : $('.sortable tr:eq(0)').position().top, 'left' :  $('.sortable tr:eq(0)').position().left, 'width' : ( container.outerWidth() + 2.5 ) - scrollbarWidth });
 	    			$('.sortable tr:eq(0)').clone().appendTo('.cloak');
 					header.each(function(item){
 						$('.cloak th:eq(' + item + ')').css({ 'width' : $('.sortable tr:eq(0) th:eq(' + item + ')').innerWidth() });
@@ -613,6 +616,7 @@
 					w = w-2;
 					last = $('.cloak th:eq(' + w + ')');
 					last.width(last.width() - 1);
+					scrollbarWidth > 0 ? last.addClass('noBorder') : "";
 					// trigger click on cloak
 					$('.cloak th').each(function(item){
 						$(this).on('click', function(){
