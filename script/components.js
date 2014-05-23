@@ -616,7 +616,6 @@
 					w = w-2;
 					last = $('.cloak th:eq(' + w + ')');
 					last.width(last.width() - 1);
-					scrollbarWidth > 0 ? last.addClass('noBorder') : "";
 					// trigger click on cloak
 					$('.cloak th').each(function(item){
 						$(this).on('click', function(){
